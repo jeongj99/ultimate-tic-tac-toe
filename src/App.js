@@ -1,10 +1,28 @@
+import Tictactoe from './components/Tictactoe';
+
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>This is my new app</h1>
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+        </tr>
+        <tr>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+        </tr>
+        <tr>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+          <td><Tictactoe /></td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
 
