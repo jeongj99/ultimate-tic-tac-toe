@@ -5,19 +5,19 @@ export default function Tictactoe() {
     <table>
       <tbody>
         <tr>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
+          <td className="individual"></td>
+          <td className="individual"></td>
+          <td className="individual"></td>
         </tr>
         <tr>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
+          <td className="individual"></td>
+          <td className="individual"></td>
+          <td className="individual"></td>
         </tr>
         <tr>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
-          <td className="individual">-</td>
+          <td className="individual"></td>
+          <td className="individual"></td>
+          <td className="individual"></td>
         </tr>
       </tbody>
     </table>
