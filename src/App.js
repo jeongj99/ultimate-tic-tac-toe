@@ -1,28 +1,10 @@
-import Tictactoe from './components/Tictactoe';
+import Ultimate from './components/Ultimate';
 
 import './App.css';
 
 function App() {
   return (
-    <table>
-      <tbody>
-        <tr>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-        </tr>
-        <tr>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-        </tr>
-        <tr>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-          <td><Tictactoe /></td>
-        </tr>
-      </tbody>
-    </table>
+    <Ultimate />
   );
 }
 
