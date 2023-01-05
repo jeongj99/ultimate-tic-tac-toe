@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 import Tictactoe from "./Tictactoe";
 
 import "./Ultimate.css";
 
 export default function Ultimate() {
+  const [activeUltimateCell, setActiveUltimateCell] = useState("all");
+
   return (
     <div>
       <table className="ultimate-board">
