@@ -1,3 +1,7 @@
+.individual-board {
+  background-color: white;
+}
+
 .individual {
   border: 1px solid black;
   width: 50px;

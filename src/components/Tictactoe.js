@@ -2,7 +2,7 @@ import "./Tictactoe.css";
 
 export default function Tictactoe() {
   return (
-    <table>
+    <table className="individual-board">
       <tbody>
         <tr>
           <td className="individual"></td>
