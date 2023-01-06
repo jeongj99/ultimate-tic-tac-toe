@@ -1,7 +1,17 @@
+import { useState } from "react";
+
 import "./Tictactoe.css";
 
 export default function Tictactoe(props) {
-  const { handleClick } = props;
+  const [turn, setTurn] = useState("x");
+
+  const handleClick = () => {
+    if (turn === "x") {
+      setTurn("o");
+    } else {
+      setTurn("x");
+    }
+  };
 
   return (
     <table className="individual-board">
