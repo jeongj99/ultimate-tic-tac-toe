@@ -1,10 +1,11 @@
 import Ultimate from './components/Ultimate';
+import Tictactoe from './components/Tictactoe';
 
 import './App.css';
 
 function App() {
   return (
-    <Ultimate />
+    <Tictactoe />
   );
 }
 
