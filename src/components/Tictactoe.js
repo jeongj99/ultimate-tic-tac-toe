@@ -50,7 +50,7 @@ export default function Tictactoe(props) {
 
   return (
     <>
-      <table className="individual-board">
+      {winner ? <h2>{winner}</h2> : <table className="individual-board">
         <tbody>
           <tr>
             <td className="individual">
@@ -86,10 +86,7 @@ export default function Tictactoe(props) {
             </td>
           </tr>
         </tbody>
-      </table>
-      {winner && (
-        <h2>{winner} wins</h2>
-      )}
+      </table>}
     </>
   );
 };
