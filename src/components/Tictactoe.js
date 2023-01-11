@@ -11,20 +11,26 @@ function Cell({ value, onClick }) {
 }
 
 export default function Tictactoe(props) {
+  const { id, turn, setTurn, ultimateCells, setUltimateCells } = props;
+
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
 
-  const checkCellWinner = (squares) => {
+  const checkCellWinner = (squares, id) => {
     const combos = {
       horizontal: [[0, 1, 2], [3, 4, 5], [6, 7, 8]],
       vertical: [[0, 3, 6], [1, 4, 7], [2, 5, 8]],
       diagonal: [[0, 4, 8], [2, 4, 6]]
     };
 
+    const ultimateSquares = [...ultimateCells];
+
     for (const combo in combos) {
       combos[combo].forEach(pattern => {
         if (squares[pattern[0]] && squares[pattern[0]] === squares[pattern[1]] && squares[pattern[0]] === squares[pattern[2]]) {
           setWinner(squares[pattern[0]]);
+          ultimateSquares[id] = squares[pattern[0]];
+          setUltimateCells(ultimateSquares);
         }
       });
     }
@@ -34,15 +40,15 @@ export default function Tictactoe(props) {
     const squares = [...cells];
 
     if (!squares[index] && !winner) {
-      squares[index] = props.turn;
+      squares[index] = turn;
 
-      if (props.turn === "x") {
-        props.setTurn("o");
+      if (turn === "x") {
+        setTurn("o");
       } else {
-        props.setTurn("x");
+        setTurn("x");
       }
 
-      checkCellWinner(squares);
+      checkCellWinner(squares, id);
       setCells(squares);
     }
   };
