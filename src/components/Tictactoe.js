@@ -14,7 +14,7 @@ export default function Tictactoe(props) {
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
 
-  const checkWinner = (squares) => {
+  const checkCellWinner = (squares) => {
     const combos = {
       horizontal: [[0, 1, 2], [3, 4, 5], [6, 7, 8]],
       vertical: [[0, 3, 6], [1, 4, 7], [2, 5, 8]],
@@ -42,7 +42,7 @@ export default function Tictactoe(props) {
         props.setTurn("x");
       }
 
-      checkWinner(squares);
+      checkCellWinner(squares);
       setCells(squares);
     }
   };
