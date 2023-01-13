@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classNames from "classnames";
 
 import "./Tictactoe.css";
 
@@ -15,6 +16,11 @@ export default function Tictactoe(props) {
 
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
+
+  const tictactoeClass = classNames("individual-board", {
+    "finish--x": winner === "x",
+    "finish--y": winner === "o",
+  });
 
   const checkCellWinner = (squares, id) => {
     const combos = {
@@ -55,7 +61,7 @@ export default function Tictactoe(props) {
 
   return (
     <>
-      {winner ? <h2>{winner}</h2> : <table className="individual-board">
+      {winner ? <h2 className={tictactoeClass}>{winner}</h2> : <table className={tictactoeClass}>
         <tbody>
           <tr>
             <td className="individual">
