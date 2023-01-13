@@ -31,35 +31,35 @@ export default function Ultimate() {
         <tbody>
           <tr >
             <td className="ultimate-cell">
-              <Tictactoe id={0} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={0} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
             <td className="ultimate-cell">
-              <Tictactoe id={1} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={1} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
             <td className="ultimate-cell">
-              <Tictactoe id={2} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
-            </td>
-          </tr>
-          <tr>
-            <td className="ultimate-cell">
-              <Tictactoe id={3} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
-            </td>
-            <td className="ultimate-cell">
-              <Tictactoe id={4} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
-            </td>
-            <td className="ultimate-cell">
-              <Tictactoe id={5} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={2} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
           </tr>
           <tr>
             <td className="ultimate-cell">
-              <Tictactoe id={6} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={3} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
             <td className="ultimate-cell">
-              <Tictactoe id={7} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={4} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
             <td className="ultimate-cell">
-              <Tictactoe id={8} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} />
+              <Tictactoe id={5} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
+            </td>
+          </tr>
+          <tr>
+            <td className="ultimate-cell">
+              <Tictactoe id={6} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
+            </td>
+            <td className="ultimate-cell">
+              <Tictactoe id={7} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
+            </td>
+            <td className="ultimate-cell">
+              <Tictactoe id={8} turn={turn} setTurn={setTurn} ultimateCells={ultimateCells} setUltimateCells={setUltimateCells} checkFinalWinner={checkFinalWinner} finalWinner={finalWinner} />
             </td>
           </tr>
         </tbody>

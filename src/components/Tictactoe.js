@@ -12,7 +12,7 @@ function Cell({ value, onClick }) {
 }
 
 export default function Tictactoe(props) {
-  const { id, turn, setTurn, ultimateCells, setUltimateCells, checkFinalWinner } = props;
+  const { id, turn, setTurn, ultimateCells, setUltimateCells, finalWinner, checkFinalWinner } = props;
 
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
@@ -44,7 +44,7 @@ export default function Tictactoe(props) {
     const squares = [...cells];
     const ultimateSquares = [...ultimateCells];
 
-    if (!squares[index] && !winner) {
+    if (!squares[index] && !winner && !finalWinner) {
       squares[index] = turn;
 
       if (turn === "x") {
