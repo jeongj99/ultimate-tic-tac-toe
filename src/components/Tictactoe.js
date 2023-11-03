@@ -12,10 +12,11 @@ function Cell({ value, onClick }) {
 }
 
 export default function Tictactoe(props) {
-  const { id, turn, setTurn, ultimateCells, setUltimateCells, finalWinner, checkFinalWinner } = props;
+  const { id, turn, setTurn, ultimateCells, setUltimateCells, finalWinner, checkFinalWinner, activeBoard, setActiveBoard } = props;
 
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
+
 
   const tictactoeClass = classNames("individual-board", {
     "finish--x": winner === "x",
@@ -44,7 +45,7 @@ export default function Tictactoe(props) {
     const squares = [...cells];
     const ultimateSquares = [...ultimateCells];
 
-    if (!squares[index] && !winner && !finalWinner) {
+    if (!squares[index] && !winner && !finalWinner && (activeBoard === null || activeBoard === id)) {
       squares[index] = turn;
 
       if (turn === "x") {
@@ -56,6 +57,7 @@ export default function Tictactoe(props) {
       checkCellWinner(squares, ultimateSquares, id);
       checkFinalWinner(ultimateSquares);
       setCells(squares);
+      setActiveBoard(index);
     }
   };
 
