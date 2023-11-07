@@ -1,6 +1,5 @@
 import { useState } from "react";
 import classNames from "classnames";
-
 import "./Tictactoe.css";
 
 function Cell({ value, onClick }) {
@@ -16,7 +15,6 @@ export default function Tictactoe(props) {
 
   const [cells, setCells] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
-
 
   const tictactoeClass = classNames("individual-board", {
     "finish--x": winner === "x",
@@ -41,6 +39,24 @@ export default function Tictactoe(props) {
     }
   };
 
+  const checkIfWinner = (squares) => {
+    const combos = {
+      horizontal: [[0, 1, 2], [3, 4, 5], [6, 7, 8]],
+      vertical: [[0, 3, 6], [1, 4, 7], [2, 5, 8]],
+      diagonal: [[0, 4, 8], [2, 4, 6]]
+    };
+
+    for (const combo in combos) {
+      combos[combo].forEach(pattern => {
+        if (squares[pattern[0]] && squares[pattern[0]] === squares[pattern[1]] && squares[pattern[0]] === squares[pattern[2]]) {
+          return true;
+        }
+      });
+    }
+
+    return false;
+  };
+
   const handleClick = (index) => {
     const squares = [...cells];
     const ultimateSquares = [...ultimateCells];
@@ -57,7 +73,9 @@ export default function Tictactoe(props) {
       checkCellWinner(squares, ultimateSquares, id);
       checkFinalWinner(ultimateSquares);
       setCells(squares);
-      setActiveBoard(index);
+
+      const isWinnerOrFullBoard = (checkIfWinner(squares) || squares.every(cell => cell !== null));
+      setActiveBoard(isWinnerOrFullBoard ? null : index);
     }
   };
 
