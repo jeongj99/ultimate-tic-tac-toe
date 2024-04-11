@@ -7,35 +7,35 @@ const Subboard = () => {
         <tbody>
           <tr>
             <td className="individual">
-              <Cell />
+              <Cell id={0} />
             </td>
             <td className="individual">
-              <Cell />
+              <Cell id={1} />
             </td>
             <td className="individual">
-              <Cell />
-            </td>
-          </tr>
-          <tr>
-            <td className="individual">
-              <Cell />
-            </td>
-            <td className="individual">
-              <Cell />
-            </td>
-            <td className="individual">
-              <Cell />
+              <Cell id={2} />
             </td>
           </tr>
           <tr>
             <td className="individual">
-              <Cell />
+              <Cell id={3} />
             </td>
             <td className="individual">
-              <Cell />
+              <Cell id={4} />
             </td>
             <td className="individual">
-              <Cell />
+              <Cell id={5} />
+            </td>
+          </tr>
+          <tr>
+            <td className="individual">
+              <Cell id={6} />
+            </td>
+            <td className="individual">
+              <Cell id={7} />
+            </td>
+            <td className="individual">
+              <Cell id={8} />
             </td>
           </tr>
         </tbody>
