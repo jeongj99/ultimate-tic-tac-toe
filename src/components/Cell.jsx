@@ -1,13 +1,22 @@
 import useUltimate from "../store/useUltimate";
 
-const Cell = ({ id }) => {
-  const { turn, setTurn, cellValue, setCellValue } = useUltimate();
+const Cell = ({ id, subboardId }) => {
+  const { turn, setTurn, ultimateState, setUltimateState } = useUltimate();
 
   const handleOnClick = () => {
-    if (!cellValue[id]) {
-      const updatedCellValue = [...cellValue];
-      updatedCellValue[id] = turn;
-      setCellValue(updatedCellValue);
+    if (!ultimateState[subboardId][id]) {
+      const updatedUltimateState = ultimateState.map((subboard, subIndex) => {
+        if (subIndex === subboardId) {
+          return subboard.map((cell, cellIndex) => {
+            if (cellIndex === id) {
+              return turn;
+            }
+            return cell;
+          });
+        }
+        return subboard;
+      });
+      setUltimateState(updatedUltimateState);
       if (turn === "x") {
         setTurn("o");
       } else {
@@ -18,7 +27,7 @@ const Cell = ({ id }) => {
 
   return (
     <button className="individual-cell" onClick={handleOnClick}>
-      {cellValue[id]}
+      {ultimateState[subboardId][id]}
     </button>
   );
 };

@@ -1,41 +1,41 @@
 import Cell from "./Cell";
 
-const Subboard = () => {
+const Subboard = ({ id }) => {
   return (
     <div>
       <table className="subboard">
         <tbody>
           <tr>
             <td className="individual">
-              <Cell id={0} />
+              <Cell id={0} subboardId={id} />
             </td>
             <td className="individual">
-              <Cell id={1} />
+              <Cell id={1} subboardId={id} />
             </td>
             <td className="individual">
-              <Cell id={2} />
-            </td>
-          </tr>
-          <tr>
-            <td className="individual">
-              <Cell id={3} />
-            </td>
-            <td className="individual">
-              <Cell id={4} />
-            </td>
-            <td className="individual">
-              <Cell id={5} />
+              <Cell id={2} subboardId={id} />
             </td>
           </tr>
           <tr>
             <td className="individual">
-              <Cell id={6} />
+              <Cell id={3} subboardId={id} />
             </td>
             <td className="individual">
-              <Cell id={7} />
+              <Cell id={4} subboardId={id} />
             </td>
             <td className="individual">
-              <Cell id={8} />
+              <Cell id={5} subboardId={id} />
+            </td>
+          </tr>
+          <tr>
+            <td className="individual">
+              <Cell id={6} subboardId={id} />
+            </td>
+            <td className="individual">
+              <Cell id={7} subboardId={id} />
+            </td>
+            <td className="individual">
+              <Cell id={8} subboardId={id} />
             </td>
           </tr>
         </tbody>
