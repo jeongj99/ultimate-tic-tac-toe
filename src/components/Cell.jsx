@@ -1,7 +1,7 @@
 import useUltimate from "../store/useUltimate";
 
 const Cell = ({ id, subboardId }) => {
-  const { turn, setTurn, ultimateState, setUltimateState } = useUltimate();
+  const { turn, setTurn, ultimateState, setUltimateState, activeSubboard, setActiveSubboard } = useUltimate();
 
   const handleOnClick = () => {
     if (!ultimateState[subboardId][id]) {
@@ -17,6 +17,7 @@ const Cell = ({ id, subboardId }) => {
         return subboard;
       });
       setUltimateState(updatedUltimateState);
+      setActiveSubboard(id);
       if (turn === "x") {
         setTurn("o");
       } else {
