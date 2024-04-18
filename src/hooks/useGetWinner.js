@@ -28,6 +28,11 @@ const useGetWinner = () => {
           }
           return;
         }
+        if (!Array.isArray(ultimateState[id])) {
+          setActiveSubboard(null);
+        } else {
+          setActiveSubboard(id);
+        }
       }
     }
   };
