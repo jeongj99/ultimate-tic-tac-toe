@@ -1,5 +1,6 @@
 import useUltimate from "../store/useUltimate";
 import useGetWinner from "../hooks/useGetWinner";
+import "./cell.css";
 
 const Cell = ({ id, subboardId }) => {
   const { turn, setTurn, ultimateState, setUltimateState, activeSubboard } = useUltimate();
@@ -29,10 +30,13 @@ const Cell = ({ id, subboardId }) => {
     }
   };
 
+  const cellValue = ultimateState[subboardId][id];
+
   return (
-    <button className="individual-cell" onClick={handleOnClick}>
-      {ultimateState[subboardId][id]}
-    </button>
+    cellValue ? <div className="individual-cell">{cellValue}</div> :
+      <button className="button-cell" onClick={handleOnClick}>
+        {ultimateState[subboardId][id]}
+      </button>
   );
 };
 

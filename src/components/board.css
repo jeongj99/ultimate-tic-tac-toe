@@ -1,0 +1,17 @@
+.ultimate-board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ultimate-board {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.ultimate-subboard {
+  padding: 10px;
+}

@@ -1,0 +1,10 @@
+.button-cell {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.individual-cell {
+  font-size: larger;
+  font-weight: 600;
+}
