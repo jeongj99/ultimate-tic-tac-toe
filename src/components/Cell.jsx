@@ -3,7 +3,7 @@ import useGetWinner from "../hooks/useGetWinner";
 
 const Cell = ({ id, subboardId }) => {
   const { turn, setTurn, ultimateState, setUltimateState, activeSubboard, setActiveSubboard } = useUltimate();
-  const { getSubboardWinner } = useGetWinner();
+  const { getSubboardWinner, getUltimateWinner } = useGetWinner();
 
   const handleOnClick = () => {
     if ((activeSubboard === subboardId || activeSubboard === null) && !ultimateState[subboardId][id]) {
@@ -19,12 +19,13 @@ const Cell = ({ id, subboardId }) => {
         return subboard;
       });
       setUltimateState(updatedUltimateState);
-      if (!Array.isArray(ultimateState[id])) {
+      getSubboardWinner(id, subboardId, updatedUltimateState);
+      getUltimateWinner(updatedUltimateState);
+      if (!Array.isArray(updatedUltimateState[id])) {
         setActiveSubboard(null);
       } else {
         setActiveSubboard(id);
       }
-      getSubboardWinner(subboardId, updatedUltimateState);
       if (turn === "x") {
         setTurn("o");
       } else {

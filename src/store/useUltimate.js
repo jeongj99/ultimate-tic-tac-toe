@@ -6,7 +6,9 @@ const useUltimate = create(set => ({
   ultimateState: Array(9).fill(Array(9).fill(null)),
   setUltimateState: ultimateState => set({ ultimateState }),
   activeSubboard: null,
-  setActiveSubboard: activeSubboard => set({ activeSubboard })
+  setActiveSubboard: activeSubboard => set({ activeSubboard }),
+  ultimateWinner: null,
+  setUltimateWinner: ultimateWinner => set({ ultimateWinner })
 }));
 
 export default useUltimate;
