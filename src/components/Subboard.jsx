@@ -6,10 +6,11 @@ const Subboard = ({ id }) => {
   const { ultimateState } = useUltimate();
 
   const subboardWinnerExists = Array.isArray(ultimateState[id]);
+  const subboardWinnerColor = ultimateState[id] === "x" ? "red" : "blue";
 
   return (
     <div className="subboard-container">
-      {!subboardWinnerExists ? <h2>{ultimateState[id]}</h2> :
+      {!subboardWinnerExists ? <h2 className={`subboard-winner ${subboardWinnerColor}`}>{ultimateState[id]}</h2> :
         <table className="subboard">
           <tbody>
             <tr>
