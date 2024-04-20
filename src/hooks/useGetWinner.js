@@ -37,7 +37,7 @@ const useGetWinner = () => {
     }
   };
 
-  const getUltimateWinner = (ultimateState) => {
+  const getUltimateWinner = ultimateState => {
     const combos = {
       horizontal: [[0, 1, 2], [3, 4, 5], [6, 7, 8]],
       vertical: [[0, 3, 6], [1, 4, 7], [2, 5, 8]],
@@ -47,19 +47,29 @@ const useGetWinner = () => {
     for (const combo in combos) {
       for (const pattern of combos[combo]) {
         const [a, b, c] = pattern;
+        const aValue = ultimateState[a];
+        const bValue = ultimateState[b];
+        const cValue = ultimateState[c];
+
+        console.log(`Checking pattern: ${pattern}`);
+        console.log(`Values: ${ultimateState[a]}, ${ultimateState[b]}, ${ultimateState[c]}`);
+
         if (
-          ultimateState[a] &&
-          ultimateState[a] === ultimateState[b] &&
-          ultimateState[a] === ultimateState[c]
+          aValue !== undefined && !Array.isArray(aValue) &&
+          aValue === bValue && aValue === cValue
         ) {
-          setUltimateWinner(ultimateState[a]);
+          console.log(`Winner found: ${aValue}`);
+          setUltimateWinner(aValue);
           return;
         }
       }
     }
+
+    console.log("No ultimate winner found");
   };
 
   return { getSubboardWinner, getUltimateWinner };
+
 };
 
 export default useGetWinner;
