@@ -26,7 +26,7 @@ const useGetWinner = () => {
           } else {
             setActiveSubboard(id);
           }
-          return;
+          return updatedUltimateState;
         }
         if (!Array.isArray(ultimateState[id])) {
           setActiveSubboard(null);

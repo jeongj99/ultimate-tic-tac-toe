@@ -20,8 +20,10 @@ const Cell = ({ id, subboardId }) => {
         return subboard;
       });
       setUltimateState(updatedUltimateState);
-      getSubboardWinner(id, subboardId, updatedUltimateState);
-      getUltimateWinner(updatedUltimateState);
+      const subboardWinner = getSubboardWinner(id, subboardId, updatedUltimateState);
+      if (subboardWinner) {
+        getUltimateWinner(subboardWinner);
+      }
       if (turn === "x") {
         setTurn("o");
       } else {
