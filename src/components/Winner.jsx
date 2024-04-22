@@ -1,12 +1,16 @@
 import useUltimate from "../store/useUltimate";
 
 const Winner = () => {
-  const { ultimateWinner } = useUltimate();
+  const { ultimateWinner, resetGame } = useUltimate();
+
+  const handlePlayAgain = () => {
+    resetGame();
+  };
 
   return (
     <div className="ultimate-winner-container">
       <h1>{`The winner is "${ultimateWinner}"`}</h1>
-      <button>Play Again</button>
+      <button onClick={handlePlayAgain}>Play Again</button>
     </div>
   );
 };

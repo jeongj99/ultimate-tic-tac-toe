@@ -1,14 +1,20 @@
 import { create } from "zustand";
 
-const useUltimate = create(set => ({
+const initialState = {
   turn: "x",
-  setTurn: turn => set({ turn }),
   ultimateState: Array(9).fill(Array(9).fill(null)),
-  setUltimateState: ultimateState => set({ ultimateState }),
   activeSubboard: null,
+  ultimateWinner: null
+};
+
+const useUltimate = create(set => ({
+  ...initialState,
+  setTurn: turn => set({ turn }),
+  setUltimateState: ultimateState => set({ ultimateState }),
   setActiveSubboard: activeSubboard => set({ activeSubboard }),
-  ultimateWinner: null,
-  setUltimateWinner: ultimateWinner => set({ ultimateWinner })
+  setUltimateWinner: ultimateWinner => set({ ultimateWinner }),
+
+  resetGame: () => set(initialState)
 }));
 
 export default useUltimate;
