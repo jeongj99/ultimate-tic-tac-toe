@@ -51,21 +51,15 @@ const useGetWinner = () => {
         const bValue = ultimateState[b];
         const cValue = ultimateState[c];
 
-        console.log(`Checking pattern: ${pattern}`);
-        console.log(`Values: ${ultimateState[a]}, ${ultimateState[b]}, ${ultimateState[c]}`);
-
         if (
           aValue !== undefined && !Array.isArray(aValue) &&
           aValue === bValue && aValue === cValue
         ) {
-          console.log(`Winner found: ${aValue}`);
           setUltimateWinner(aValue);
           return;
         }
       }
     }
-
-    console.log("No ultimate winner found");
   };
 
   return { getSubboardWinner, getUltimateWinner };
